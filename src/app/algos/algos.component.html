@@ -1,0 +1,68 @@
+<h1>Data Structures and Algorithms</h1>
+<ul>
+  <li>
+    <h2>Stack</h2>
+    <div class="form-group">
+      <input type="text" #stacks ng-model="textValue" class="form-control">
+      <br>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline-primary" (click)="push(stacks.value)">Push</button>
+        <button type="button" class="btn btn-outline-primary" (click)="pop()">Pop</button>
+      </div>
+    </div>
+    <div>Stack length: {{stackCount()}}</div>
+    <div *ngIf="stack && stack.length > 0">
+      <ul>
+        <li *ngFor="let s of stack">{{ s }}</li>
+      </ul>
+    </div>
+  </li>
+  <li>
+    <h2>Queue</h2>
+    <div class="form-group">
+      <input type="text" #queues ng-model="textValue" class="form-control">
+      <br>
+      <div class="btn-group">
+        <button class="btn btn-outline-primary" (click)="enqueue(queues.value)">Enqueue</button>
+        <button class="btn btn-outline-primary" (click)="dequeue()">Dequeue</button>
+      </div>
+    </div>
+    <div>Queue length: {{queueCount()}}</div>
+    <div *ngIf="queue && queue.length > 0">
+      <ul>
+        <li *ngFor="let q of queue">{{ q }}</li>
+      </ul>
+    </div>
+  </li>
+  <li>
+    <h2>Is Prime Number</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" #prime>
+      <br>
+      <button class="btn btn-outline-primary" (click)="isPrime(prime.value)">Check Prime Number</button>
+    </div>
+    <div>Is Prime Number? {{ primeNumber }}</div>
+  </li>
+  <li>
+    <h2>Prime Factors</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" #primeF>
+      <br>
+      <button class="btn btn-outline-primary" (click)="primeFactors(primeF.value)">Check Prime Number</button>
+    </div>
+    <div *ngIf="factors && factors.length > 0">
+        <ul>
+          <li *ngFor="let pf of factors">{{ pf }}</li>
+        </ul>
+      </div>
+  </li>
+  <li>
+      <h2>Fibonacci</h2>
+      <div class="form-group">
+        <input type="text" class="form-control" #fi>
+        <br>
+        <button class="btn btn-outline-primary" (click)="fibonacci(fi.value)">Fibonacci</button>
+      </div>
+      <div>Fibonacci number: {{ fibo }}</div>
+    </li>
+</ul>
